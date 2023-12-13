@@ -1,0 +1,29 @@
+.my-font h5{
+  @apply text-white font-normal text-sm py-2;
+}
+
+.my-font p{
+  @apply text-gray-300 font-light text-xs py-2;
+}
+
+.my-font p:hover{
+  @apply text-white cursor-pointer;
+}
+
+@media (min-width: 640px) {
+  .disable-click {
+    pointer-events: none;
+  }
+}
+
+.my-font2 p{
+  @apply text-gray-400 font-light text-xs py-2;
+}
+
+.my-font2 span{
+  @apply text-gray-200 font-normal underline text-xs py-2 mx-1 cursor-pointer;
+}
+
+.my-font2 span:hover{
+  @apply text-gray-50;
+}

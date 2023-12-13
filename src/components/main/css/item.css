@@ -1,0 +1,36 @@
+.item-list .hidden-items {
+  transform-origin: top;
+  opacity: 1; 
+  max-height: none; 
+  overflow: visible;
+  transition: opacity 1s ease-in-out; 
+}
+
+@media (min-width: 640px) {
+  .item-list .hidden-items {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out, opacity 1s ease-in-out; 
+  }
+  
+  .last-item-container:hover .hidden-items {
+    opacity: 1;
+    max-height: 500px; 
+  }
+}
+
+@media (max-width: 640px) {
+  .total-list {
+    display: none;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .total-list.show {
+    display: block; 
+    opacity: 1;
+    max-height: none; 
+    transition: none; 
+  }
+}
