@@ -35,13 +35,13 @@ export function NavItem2({searchBtn, setSearchBtn}:NavItem2Props) {
         className="hidden pl-60 font-medium items-center gap-6 
            lg:flex overflow-x-auto"
       >
-        <a href="" className="whitespace-nowrap	">
+        <a href="/shop" className="whitespace-nowrap	">
           New Releases
         </a>
-        <a href="">Men</a>
-        <a href="">Women</a>
-        <a href="">Kids</a>
-        <a href="" className="text-ellipsis overflow-hidden">
+        <a href="/shop">Men</a>
+        <a href="/shop">Women</a>
+        <a href="/shop">Kids</a>
+        <a href="/shop" className="text-ellipsis overflow-hidden">
           Sale
         </a>
       </div>

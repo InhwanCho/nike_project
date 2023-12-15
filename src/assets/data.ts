@@ -150,3 +150,29 @@ export const data5:ItemSection[] = [
     items: ['베이비 신발','키즈 신발',' 키즈 농구 신발','키즈 러닝 신발',' 키즈 테니스 신발','키즈 클라이밍 신발']
   }
 ];
+
+export const filterItems = [{
+  title : '신발',
+},
+{
+  title: '탑 & 티셔츠'
+},
+{
+  title: '후디 & 크루'
+},
+{
+  title: '재킷 & 베스트'
+},
+{
+  title: '팬츠 & 타이츠'
+},
+{
+  title: '쇼츠'
+},
+{
+  title: '트랙수트'
+},
+{
+  title: '용품'
+},
+]

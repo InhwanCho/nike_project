@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black w-full mt-8 p-10 text-white">
+    <footer className="bg-black w-full mt-8 p-10 text-white -z-10">
       <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-8 mb-5">
         <div className="my-font">
           <h5>새로운 소식</h5>

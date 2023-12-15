@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "./css/swiper.css";
 import "swiper/css";
 import { data3 } from "../../assets/data";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Mousewheel, Keyboard } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
@@ -22,17 +22,22 @@ export default function Iconic({title}) {
             slidesPerView={4}
             spaceBetween={40}
             centeredSlides={true}
+            watchOverflow={true}
+            mousewheel={true}
+            keyboard={true}
             loop={true}
             navigation={true}
-            modules={[Pagination, Navigation]}
+            modules={[Pagination, Navigation, Mousewheel, Keyboard]}
             className="h-[360px] w-full my-swiper"
             breakpoints={{
               // 화면 크기에따라 반응형 perView
               0: {
                 slidesPerView: 2,
+                spaceBetween:10,
               },
               640: {
                 slidesPerView: 3,
+                spaceBetween:25,
               },
               960: {
                 slidesPerView: 4,
@@ -41,8 +46,8 @@ export default function Iconic({title}) {
           >
             {data3.map((item, i) => (
               <SwiperSlide key={i}>
-                <img src={item.url} alt="" />
-                <p className="text-gray-500 text-base text-left pt-5">
+                <img src={item.url} alt="" className='Iconic-img' />
+                <p className="text-gray-600 text-base text-left pt-5">
                   {item.title}
                 </p>
               </SwiperSlide>

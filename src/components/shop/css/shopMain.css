@@ -1,0 +1,41 @@
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    display: flex;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-hidden{
+  display: none;
+  opacity: 0;
+  transition: opacity 200ms, fade-out 200ms;
+}
+
+.appear {
+  animation: fade-in 500ms;
+  display: flex;
+}
+@media (max-width:1024px){
+  .appear {
+    display: none;
+  }
+}
+
+
+
