@@ -35,7 +35,7 @@ function App() {
           }
         />
         <Route
-          path="/shop"
+          path='/shop'
           element={
             <section>
               <Title filter={filter} setFilter={setFilter} />
