@@ -4,7 +4,12 @@ import { BsFilter } from "react-icons/bs";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { filterItems } from "../../../assets/data";
 
-export default function Title({ filter, setFilter }) {
+interface TitleProps{
+  filter: boolean|undefined;
+  setFilter: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function Title({ filter, setFilter }:TitleProps) {
   const [rename, setRename] = useState(false);
   const [changeIcon, setChangeIcon] = useState(false);
   const [sort, setSort] = useState('')
@@ -34,7 +39,7 @@ export default function Title({ filter, setFilter }) {
             {changeIcon ? (
               <>
                 <FaAngleUp className="w-6 h-6" />
-                <div className="w-full absolute text-div top-11 left-1 p-4 pr-8 bg-white rounded-bl-2xl whitespace-nowrap">
+                <div className="z-10 w-full absolute top-11 left-1 p-4 pr-8 bg-white rounded-bl-2xl whitespace-nowrap">
                   <p className="hover:text-gray-900/60" onClick={()=>{setSort('추천순')}}>추천순</p>
                   <p className="hover:text-gray-900/60" onClick={()=>{setSort('가격 높은 순')}}>가격 높은 순</p>
                   <p className="hover:text-gray-900/60" onClick={()=>{setSort('가격 낮은 순')}}>가격 낮은 순</p>

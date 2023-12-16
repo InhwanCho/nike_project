@@ -4,7 +4,7 @@ import {
   HiOutlineShoppingCart,
 } from "react-icons/hi2";
 import { IoReorderThreeOutline } from "react-icons/io5";
-import { NavItem2Props } from "./type/type";
+import { NavItem2Props } from "../../type/type";
 
 export function NavItem2({searchBtn, setSearchBtn}:NavItem2Props) {
   

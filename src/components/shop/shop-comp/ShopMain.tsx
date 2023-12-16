@@ -1,29 +1,37 @@
 import Products from "./Products";
 import "../css/shopMain.css";
 import { filterItems } from "../../../assets/data";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Gender from "./filter/Gender";
 import Company from "./filter/Company";
+import { shopdata } from "../../../assets/data";
+import { ShopProps } from "../../../type/type";
 
-export default function ShopMain({ filter, setFilter }) {
-  const [gender, setGender] = useState(false);
-  const [company, setCompany] = useState(false);
+interface ShopMainProps{
+  filter: boolean|undefined;
+  setFilter?: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function ShopMain({ filter }:ShopMainProps) {
+  //토글
+  const [gender, setGender] = useState<null|boolean>(false);
+  const [company, setCompany] = useState<null|boolean>(false);
   
-  const [selectGender, setSelectGender] = useState(null);
-  const [selectCompany, setSelectCompany] = useState(null);
+  const [selectGender, setSelectGender] = useState<string | null>(null);
+  const [selectCompany, setSelectCompany] = useState<string | null>(null);
   
 
 
-  const handleGender = (event) => {
+  const handleGender = (event: ChangeEvent<HTMLInputElement>): void => {
     setSelectGender(event.target.value);
   };
-  const handleCompany = (event) => {
+  const handleCompany = (event: ChangeEvent<HTMLInputElement>): void => {
     setSelectCompany(event.target.value);
   };
 
 
-  function filteredData(temdata, selectGender, selectCompany) {
-    let filteredProducts = temdata;
+  function filteredData(shopdata:ShopProps[], selectGender:null|string, selectCompany:null|string) {
+    let filteredProducts = shopdata;
     
     if (selectGender) {
       filteredProducts = filteredProducts.filter(
@@ -39,7 +47,7 @@ export default function ShopMain({ filter, setFilter }) {
     return filteredProducts;
   }
 
-  const result = filteredData(temdata, selectGender, selectCompany);
+  const result = filteredData(shopdata, selectGender, selectCompany);
 
   return (
     <>
@@ -72,133 +80,9 @@ export default function ShopMain({ filter, setFilter }) {
           </div>
         </div>
         <div className="flex-grow">
-          <Products temdata={result} />
+          <Products shopdata={result} />
         </div>
       </div>
     </>
   );
 }
-
-const temdata = [
-  {
-    url: "/img/carousel/img-3.jpeg",
-    new: true,
-    title: "나이키 프로 여성",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "여성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-2.webp",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "조단",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "jordan",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-  {
-    url: "/img/carousel/img-1.jpeg",
-    new: true,
-    title: "나이키 프로",
-    desciption: "남성 드라이핏",
-    price: 45000,
-    newPrice: 30000,
-    gender: "남성",
-    company: "nike",
-    color: ["black", "white"],
-  },
-];

@@ -1,5 +1,3 @@
-
-
 export default function Hero() {
   return (
     <>
@@ -15,8 +13,8 @@ export default function Hero() {
             </div>
           </div>
           <div className="mt-8 flex justify-center space-x-1">
-            <a className="rounded-full border p-3 px-4 bg-black text-white hover:bg-gray-600">자세히 보기</a>
-            <a className="rounded-full border p-3 px-4 bg-black text-white hover:bg-gray-600" >기프트 컬렉션 구매하기</a>
+            <a className="rounded-full border p-3 px-4 bg-black text-white hover:bg-gray-600 cursor-pointer">자세히 보기</a>
+            <a className="rounded-full border p-3 px-4 bg-black text-white hover:bg-gray-600 cursor-pointer" >기프트 컬렉션 구매하기</a>
           </div>
       </div>
     </>

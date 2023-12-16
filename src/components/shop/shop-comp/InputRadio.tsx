@@ -1,5 +1,13 @@
+import { ChangeEvent } from 'react';
 import '../css/shopMain.css'
-export default function InputRadio({title, handle, name}) {
+
+interface InputRadioProps{
+  title:string;
+  handle:(event: ChangeEvent<HTMLInputElement>) => void;
+  name:string;
+}
+
+export default function InputRadio({title, handle, name}:InputRadioProps) {
   
   return (
     <label className="sidebar-label-container">

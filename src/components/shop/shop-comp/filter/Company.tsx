@@ -1,8 +1,16 @@
 import '../../css/sidefilter.css'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import InputRadio from '../InputRadio';
+import { ChangeEvent, SetStateAction } from 'react';
 
-export default function Company({company,setCompany,handleCompany, name}) {
+interface CompanyProps{
+  company:null|boolean;
+  setCompany:React.Dispatch<SetStateAction<boolean | null>>;
+  handleCompany:(event: ChangeEvent<HTMLInputElement>) => void;
+  name:string;
+}
+
+export default function Company({company,setCompany,handleCompany, name}:CompanyProps) {
   return (
     <div className="flex flex-col space-y-2 border-b-2 pb-5">
       <div className="flex justify-between" onClick={() => setCompany(!company)}>

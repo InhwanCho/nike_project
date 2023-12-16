@@ -4,8 +4,15 @@ import "swiper/css";
 import { Keyboard, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { GiftProps } from "../../type/type";
 
-export default function SlideCard({ title, items, number }) {
+interface SlideCardProps{
+  title:string;
+  items:GiftProps[];
+  number:number;
+}
+
+export default function SlideCard({ title, items, number }:SlideCardProps) {
   const prevBtn = "leftarrow-" + number;
   const nextBtn = "rightarrow-" + number;
   return (
@@ -15,10 +22,10 @@ export default function SlideCard({ title, items, number }) {
           <h2 className="font-medium text-2xl">{title}</h2>
           <div className="flex justify-end gap-3">
             <MdKeyboardArrowLeft
-              className={`p-1 w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-300/80 ${prevBtn}`}
+              className={`p-1 w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-300/80 cursor-pointer ${prevBtn}`}
             />
             <MdKeyboardArrowRight
-              className={`p-1 w-12 h-12 mr-8 rounded-full bg-gray-100 hover:bg-gray-300/80 ${nextBtn}`}
+              className={`p-1 w-12 h-12 mr-8 rounded-full bg-gray-100 hover:bg-gray-300/80 cursor-pointer ${nextBtn}`}
             />
           </div>
         </div>
@@ -50,7 +57,7 @@ export default function SlideCard({ title, items, number }) {
               },
             }}
           >
-            {items.map((data, index) => (
+            {items.map((data, index : number) => (
               <SwiperSlide key={index}>
                 <div className={`inline-block`}>
                   <img
@@ -61,7 +68,7 @@ export default function SlideCard({ title, items, number }) {
                       data.price ? "apparel-img" : "gift-img"
                     }`}
                   />
-                  <div className="py-3 flex flex-col  whitespace-normal">
+                  <div className="py-3 h-[13h] lg:h-[9vh] flex flex-col  whitespace-normal">
                     <h3
                       className={`${
                         data.price
@@ -85,7 +92,7 @@ export default function SlideCard({ title, items, number }) {
                     {data.newPrice ? (
                       <>
                         <p className="line-through text-gray-400">
-                          {data.price.toLocaleString()} 원
+                          {data.price?.toLocaleString()} 원
                         </p>
                         <p className="font-semibold pb-3">
                           {data.newPrice.toLocaleString()} 원

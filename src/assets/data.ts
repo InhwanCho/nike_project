@@ -1,6 +1,6 @@
-import { ItemSection } from "../components/main/type/type";
+import { GiftProps, IconicProps, ItemProps, ShopProps } from "../type/type";
 
-export const data1 = [
+export const data1:GiftProps[] = [
   {
     url: "/image-1.jpg",
     title: "스타일리쉬한 퍼포먼스를 위한 선물",
@@ -28,7 +28,7 @@ export const data1 = [
   },
 ];
 
-export const data2 = [
+export const data2:GiftProps[] = [
   {
     url: "/img/apparel/1.webp",
     title: "나이키 스포츠웨어",
@@ -85,7 +85,7 @@ export const data2 = [
   },
 ];
 
-export const data3 = [
+export const data3:IconicProps[] = [
   {
     url: '/img/carousel/img-1.jpeg',
     title: "나이키 솔로 스우시",
@@ -117,7 +117,7 @@ export const data3 = [
 ];
 
 
-export const data4 = [
+export const data4:IconicProps[] = [
   {
     url: "/image-2.jpg",
     title: "나이키 솔로 스우시",
@@ -132,7 +132,7 @@ export const data4 = [
   },
 ];
 
-export const data5:ItemSection[] = [
+export const data5:ItemProps[] = [
   {
     title: "Featured",
     items: ["에어 포스 1", "조던 1", "에어맥스 97", "에어맥스 90", "블레이저", "리액트", "페가수스"],
@@ -151,7 +151,9 @@ export const data5:ItemSection[] = [
   }
 ];
 
-export const filterItems = [{
+export const filterItems:{
+  title: string;
+}[] = [{
   title : '신발',
 },
 {
@@ -176,3 +178,127 @@ export const filterItems = [{
   title: '용품'
 },
 ]
+
+export const shopdata:ShopProps[] = [
+  {
+    url: "/img/carousel/img-3.jpeg",
+    new: false,
+    title: "나이키 프로 w",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "여성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-2.webp",
+    new: true,
+    title: "나이키 프로 m",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-4.webp",
+    new: true,
+    title: "조단 w",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "여성",
+    company: "jordan",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-5.webp",
+    new: true,
+    title: "조단 m",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "jordan",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+  {
+    url: "/img/carousel/img-1.jpeg",
+    new: true,
+    title: "나이키 프로",
+    desciption: "남성 드라이핏",
+    price: 45000,
+    newPrice: 30000,
+    gender: "남성",
+    company: "nike",
+    color: ["black", "white"],
+  },
+];

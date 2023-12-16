@@ -2,11 +2,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "./css/swiper.css";
 import "swiper/css";
 import { data3 } from "../../assets/data";
-import { Pagination, Navigation, Mousewheel, Keyboard } from "swiper/modules";
+import { Pagination, Navigation,  Keyboard } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function Iconic({title}) {
+interface IconicProps {
+  title: string;
+}
+
+export default function Iconic({title}:IconicProps) {
 
   return (
     <>
@@ -23,11 +27,11 @@ export default function Iconic({title}) {
             spaceBetween={40}
             centeredSlides={true}
             watchOverflow={true}
-            mousewheel={true}
+
             keyboard={true}
             loop={true}
             navigation={true}
-            modules={[Pagination, Navigation, Mousewheel, Keyboard]}
+            modules={[Pagination, Navigation, Keyboard]}
             className="h-[360px] w-full my-swiper"
             breakpoints={{
               // 화면 크기에따라 반응형 perView

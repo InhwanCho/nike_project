@@ -26,7 +26,7 @@ function App() {
             <main>
               <Hero />
               <SlideCard title={'소중한 사람들을 위한 선물'} items={data1} number={0} />
-              <SlideCard title={'소중한 사람들을 위한 선물'} items={data2} number={1}/>
+              <SlideCard title={'연말 선물 추천 Apparel'} items={data2} number={1}/>
               <Iconic title={"Always Iconic"} />
               <Trending title={"Trending Now"} items={data4} />
               <Movement title={"끝없는 움직임"} />

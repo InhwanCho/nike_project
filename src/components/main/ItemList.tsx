@@ -17,7 +17,7 @@ export default function ItemList() {
   }, []);
 
   // Function to toggle the visibility of .total-list for each section
-  const handleTitleClick = (index) => {
+  const handleTitleClick = (index: number) => {
     if (windowWidth <= 640) {
       setToggles(toggles.map((toggle, i) => (i === index ? !toggle : toggle)));
     }
@@ -34,7 +34,7 @@ export default function ItemList() {
                 onClick={() => handleTitleClick(index)}
               >
                 {" "}
-                {/* Handle click */}
+                
                 {section.title}
               </h4>
             </li>
@@ -45,7 +45,7 @@ export default function ItemList() {
                 }`}
               >
                 {" "}
-                {/* Toggle class here */}
+                
                 {section.items.map((item, itemIndex) => {
                   const isHidden = itemIndex >= 4;
                   return (

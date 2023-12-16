@@ -1,4 +1,8 @@
-export default function Movement({title}) {
+interface MovementProps{
+  title:string;
+}
+
+export default function Movement({title}:MovementProps) {
   return (
     <div className="mt-20 mx-12">
       <div className="flex justify-center">

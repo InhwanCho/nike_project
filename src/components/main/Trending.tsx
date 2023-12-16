@@ -1,6 +1,11 @@
-import { SlideCardProps } from "./type/type";
+import { IconicProps } from "../../type/type";
 
-export default function Trending({ title, items }: SlideCardProps) {
+interface TrendingProps{
+  title:string;
+  items:IconicProps[];
+}
+
+export default function Trending({ title, items }: TrendingProps) {
   return (
     <div className="mt-20">
       <div className="mb-10 ml-14">
