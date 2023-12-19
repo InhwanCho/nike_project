@@ -15,7 +15,7 @@ export default function Nav() {
     const currentScrollPos = window.scrollY;
     const isScrollingUp = prevScrollPos > currentScrollPos;
 
-    setIsVisible(isScrollingUp || currentScrollPos < 10); // or a small threshold to show header on top
+    setIsVisible(isScrollingUp || currentScrollPos < 10); 
     setPrevScrollPos(currentScrollPos);
   }, 100);
 

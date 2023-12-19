@@ -6,6 +6,9 @@ import Gender from "./filter/Gender";
 import Company from "./filter/Company";
 import { shopdata } from "../../../assets/data";
 import { ShopProps } from "../../../type/type";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
+
 
 interface ShopMainProps{
   filter: boolean|undefined;
@@ -19,8 +22,9 @@ export default function ShopMain({ filter }:ShopMainProps) {
   
   const [selectGender, setSelectGender] = useState<string | null>(null);
   const [selectCompany, setSelectCompany] = useState<string | null>(null);
-  
 
+  //검색
+  const InputText = useSelector((state:RootState) => state.changeInput.message);
 
   const handleGender = (event: ChangeEvent<HTMLInputElement>): void => {
     setSelectGender(event.target.value);
@@ -30,24 +34,29 @@ export default function ShopMain({ filter }:ShopMainProps) {
   };
 
 
-  function filteredData(shopdata:ShopProps[], selectGender:null|string, selectCompany:null|string) {
+  function filteredData(shopdata:ShopProps[], selectGender:null|string, selectCompany:null|string, query:null|string) {
     let filteredProducts = shopdata;
     
+    if( query ) {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.title.toLowerCase().indexOf(InputText.toLowerCase()) !== -1
+      );
+    } 
     if (selectGender) {
       filteredProducts = filteredProducts.filter(
         ({ gender }) => gender === selectGender
       );
-    }
+    } 
     if (selectCompany) {
       filteredProducts = filteredProducts.filter(
         ({ company }) => company === selectCompany
       );
-    }
+    } 
 
     return filteredProducts;
   }
-
-  const result = filteredData(shopdata, selectGender, selectCompany);
+  
+  const result = filteredData(shopdata, selectGender, selectCompany,InputText);
 
   return (
     <>
