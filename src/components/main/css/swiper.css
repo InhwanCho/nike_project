@@ -19,7 +19,7 @@
 .swiper-button-next {
   min-width: 30px;
   min-height: 30px;
-  background-color: rgba(255, 255, 255, 0.45);
+  /* background-color: rgba(128, 128, 128, 0.137); */
   border-radius: 999px;
   display: flex;
   justify-content: center;
