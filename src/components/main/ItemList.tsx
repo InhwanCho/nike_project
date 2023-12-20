@@ -3,11 +3,11 @@ import "./css/item.css";
 import { data5 } from "../../assets/data";
 
 export default function ItemList() {
-  // Initialize toggle state for each section to false
+  // 토글
   const [toggles, setToggles] = useState(new Array(data5.length).fill(false));
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Update the windowWidth state based on the window's size
+  // 반응형
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -16,7 +16,6 @@ export default function ItemList() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Function to toggle the visibility of .total-list for each section
   const handleTitleClick = (index: number) => {
     if (windowWidth <= 640) {
       setToggles(toggles.map((toggle, i) => (i === index ? !toggle : toggle)));

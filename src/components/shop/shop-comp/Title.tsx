@@ -17,7 +17,7 @@ export default function Title({ filter, setFilter }:TitleProps) {
     <>
       <div className="hidden lg:flex sticky bg-white top-0 p-6 px-11 items-center justify-between">
         <div className="items-center">
-          <h2 className="text-2xl font-medium">신제품 (3)</h2></div>
+          <h2 className="text-2xl font-medium">신제품</h2></div>
         <div className="flex gap-7">
           <div
             onClick={() => {
