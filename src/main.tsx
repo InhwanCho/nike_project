@@ -10,7 +10,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <div className="max-w-screen-2xl mx-auto w-full h-screen">
+          <App />
+        </div>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
