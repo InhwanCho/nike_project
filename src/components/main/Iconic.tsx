@@ -15,7 +15,7 @@ export default function Iconic({title}:IconicProps) {
   return (
     <>
       <div className="relative mt-20">
-        <div className="ml-14 mb-10">
+        <div className="ml-5 sm:ml-14 mb-10">
           <h3 className="font-medium text-2xl">{title}</h3>
         </div>
         <div className="bg-repeat-x">
@@ -51,7 +51,7 @@ export default function Iconic({title}:IconicProps) {
             {data3.map((item, i) => (
               <SwiperSlide key={i}>
                 <img src={item.url} alt="" className='Iconic-img' />
-                <p className="text-gray-600 text-base text-left pt-5">
+                <p className="text-gray-600 text-base text-center pt-5">
                   {item.title}
                 </p>
               </SwiperSlide>

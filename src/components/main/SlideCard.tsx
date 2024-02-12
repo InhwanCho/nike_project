@@ -17,8 +17,8 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
   const nextBtn = "rightarrow-" + number;
   return (
     <>
-      <div className="mt-20">
-        <div className="grid grid-cols-2 ml-14 mb-10">
+      <div className="mt-10 sm:mt-20">
+        <div className="grid grid-cols-2 ml-5 sm:ml-14 mb-10">
           <h2 className="font-medium text-2xl">{title}</h2>
           <div className="flex justify-end gap-3">
             <MdKeyboardArrowLeft
@@ -29,7 +29,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
             />
           </div>
         </div>
-        <div className="ml-14 overflow-auto ">
+        <div className="ml-5 sm:ml-14 overflow-auto">
           <Swiper
             slidesPerView={3.2}
             spaceBetween={20}
@@ -42,14 +42,17 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
             keyboard={true}
             cssMode={true}
             modules={[Navigation, Mousewheel, Keyboard]}
-            className="h-[46vh] w-full"
+            className="w-[95%] sm:w-full"
             breakpoints={{
               // 화면 크기에따라 반응형 perView
               0: {
+                slidesPerView: 1
+              },
+              640:{
                 slidesPerView: 2,
                 spaceBetween: 5,
               },
-              640: {
+              768: {
                 slidesPerView: 3,
               },
               960: {
@@ -68,7 +71,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
                       data.price ? "apparel-img" : "gift-img"
                     }`}
                   />
-                  <div className="py-3 h-[13h] lg:h-[9vh] flex flex-col  whitespace-normal">
+                  <div className="py-3 flex flex-col  whitespace-normal">
                     <h3
                       className={`${
                         data.price
@@ -88,7 +91,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
                       {data.content}
                     </p>
                   </div>
-                  <div className="text-left">
+                  <div className="text-center sm:text-left">
                     {data.newPrice ? (
                       <>
                         <p className="line-through text-gray-400">

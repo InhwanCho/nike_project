@@ -8,13 +8,13 @@ interface TrendingProps{
 export default function Trending({ title, items }: TrendingProps) {
   return (
     <div className="mt-20">
-      <div className="mb-10 ml-14">
+      <div className="mb-10 ml-5 sm:ml-14">
         <h3 className="font-medium text-2xl">{title}</h3>
       </div>
-      <div className="grid grid-cols-1 mx-10 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 mx-3 sm:mx-10 lg:grid-cols-3 gap-4">
         {items.map((data, index) => (
           <div key={index} className="relative">
-            <div className="h-[40rem] my-2 lg:h-[20rem] px-2 justify-center">
+            <div className="h-[20rem] sm:h-[40rem] my-2 lg:h-[20rem] px-2 justify-center">
               <img
                 src={data.url}
                 alt=""

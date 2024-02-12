@@ -4,7 +4,7 @@ interface MovementProps{
 
 export default function Movement({title}:MovementProps) {
   return (
-    <div className="mt-20 mx-12">
+    <div className="mt-20 mx-5 sm:mx-12">
       <div className="flex justify-center">
         <img src='/image-5.jpg' alt="img" className="h-[45vw] w-full"/>
       </div>
