@@ -31,7 +31,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
         </div>
         <div className="ml-5 sm:ml-14 overflow-auto">
           <Swiper
-            slidesPerView={3.2}
+            slidesPerView={3}
             spaceBetween={20}
             navigation={{
               prevEl: "." + prevBtn,
