@@ -10,11 +10,13 @@ interface SlideCardProps{
   title:string;
   items:GiftProps[];
   number:number;
+  perView?:number;
 }
 
-export default function SlideCard({ title, items, number }:SlideCardProps) {
+export default function SlideCard({ title, items, number,perView }:SlideCardProps) {
   const prevBtn = "leftarrow-" + number;
   const nextBtn = "rightarrow-" + number;
+  
   return (
     <>
       <div className="mt-10 sm:mt-20">
@@ -31,7 +33,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
         </div>
         <div className="ml-5 sm:ml-14 overflow-auto">
           <Swiper
-            slidesPerView={3}
+            slidesPerView={4}
             spaceBetween={20}
             navigation={{
               prevEl: "." + prevBtn,
@@ -42,7 +44,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
             keyboard={true}
             cssMode={true}
             modules={[Navigation, Mousewheel, Keyboard]}
-            className="w-[95%] sm:w-full"
+            className="w-[100%] sm:w-full"
             breakpoints={{
               // 화면 크기에따라 반응형 perView
               0: {
@@ -56,7 +58,7 @@ export default function SlideCard({ title, items, number }:SlideCardProps) {
                 slidesPerView: 3,
               },
               960: {
-                slidesPerView: 3.2,
+                slidesPerView: perView,
               },
             }}
           >
