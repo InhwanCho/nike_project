@@ -58,7 +58,7 @@ export function NavItem2({ searchBtn, setSearchBtn }: NavItem2Props) {
       ) : (
         <>
           <div
-            className="hidden pl-60 font-medium items-center gap-6 
+            className="hidden pl-60  font-medium items-center gap-6 
            lg:flex overflow-x-auto"
           >
             <a href="/shop" className="whitespace-nowrap	">
@@ -71,7 +71,7 @@ export function NavItem2({ searchBtn, setSearchBtn }: NavItem2Props) {
               Sale
             </a>
           </div>
-          <div className="items-center gap-3 flex mr-6">
+          <div className="items-center gap-3 flex mr-2 sm:mr-6">
             <div className="relative inline-block">
               <input
                 minLength={2}
@@ -116,7 +116,7 @@ export function NavItem2({ searchBtn, setSearchBtn }: NavItem2Props) {
 
 export function NavItem3() {
   return (
-    <div className="bg-gray-100 justify-center text-center border-t py-2">
+    <div className="bg-gray-100 flex sm:block justify-center items-center gap-4 text-center border-t py-2">
       <p>이용약관 개정 안내</p>
       <a href="" className="text-xs underline">
         자세히 보기
