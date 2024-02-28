@@ -20,9 +20,9 @@ export default function SlideCard({ title, items, number,perView }:SlideCardProp
   return (
     <>
       <div className="mt-10 sm:mt-20">
-        <div className="grid grid-cols-2 ml-5 sm:ml-14 mb-10">
-          <h2 className="font-medium sm:block flex items-center pl-1 text-lg sm:text-2xl">{title}</h2>
-          <div className="flex justify-end gap-3">
+        <div className="sm:grid flex justify-between sm:grid-cols-2 ml-5 sm:ml-14 mb-10">
+          <h2 className="font-medium flex items-center pl-1 text-lg sm:text-2xl">{title}</h2>
+          <div className="flex sm:justify-end gap-3">
             <MdKeyboardArrowLeft
               className={`p-1 w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-300/80 cursor-pointer ${prevBtn}`}
             />
